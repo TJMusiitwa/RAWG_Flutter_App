@@ -42,7 +42,7 @@ jobs:
     - run: flutter build apk --profile
   
     # Build apk in profile mode per app bundle.
-    - run: flutter build ios --profile  
+    - run: flutter build ios --profile --no-codesign
     
     # Upload generated apk to the artifacts.
     - uses: actions/upload-artifact@v2
