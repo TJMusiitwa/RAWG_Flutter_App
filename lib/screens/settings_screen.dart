@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return PlatformScaffold(
-      appBar: PlatformAppBar(
+    return Scaffold(
+      appBar: AppBar(
         title: Text('Settings'),
-        material: (context, platform) => MaterialAppBarData(elevation: 0),
+        elevation: 0,
       ),
-      body: SingleChildScrollView(
+      body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
               title: Text('Rate RAWG Flutter'),
@@ -36,6 +36,9 @@ class SettingsScreen extends StatelessWidget {
               subtitle: Text('https://rawg.io/'),
               onTap: () {},
             ),
+            Expanded(
+              child: Container(),
+            ),
             Align(
               alignment: Alignment.bottomCenter,
               child: Column(
@@ -55,7 +58,6 @@ class SettingsScreen extends StatelessWidget {
           ],
         ),
       ),
-      iosContentPadding: true,
     );
   }
 }

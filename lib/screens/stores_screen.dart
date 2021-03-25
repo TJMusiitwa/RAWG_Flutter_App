@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:rawg_flutter/data/base.dart';
 import 'package:rawg_flutter/models/store.dart';
 
@@ -35,19 +34,15 @@ class _StoresScreenState extends State<StoresScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return PlatformScaffold(
-      appBar: PlatformAppBar(
-        leading: PlatformIconButton(
-          icon: Icon(context.platformIcons.settings),
-          onPressed: () => Navigator.of(context).push(platformPageRoute(
-              context: context, builder: (context) => SettingsScreen())),
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.settings),
+          onPressed: () => Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => SettingsScreen())),
         ),
         title: Text('Stores'),
-        material: (context, platform) => MaterialAppBarData(elevation: 0),
-        cupertino: (context, platform) => CupertinoNavigationBarData(
-          heroTag: 'StoresToSett',
-          transitionBetweenRoutes: false,
-        ),
+        elevation: 0,
       ),
       body: ListView.builder(
         itemCount: (storeList == null ||

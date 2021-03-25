@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+
 import 'package:rawg_flutter/data/base.dart';
 import 'package:rawg_flutter/models/platform.dart';
 
@@ -18,19 +18,15 @@ class _PlatformsScreenState extends State<PlatformsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return PlatformScaffold(
-      appBar: PlatformAppBar(
-        leading: PlatformIconButton(
-          icon: Icon(context.platformIcons.settings),
-          onPressed: () => Navigator.of(context).push(platformPageRoute(
-              context: context, builder: (context) => SettingsScreen())),
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.settings),
+          onPressed: () => Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => SettingsScreen())),
         ),
         title: Text('Platforms'),
-        material: (context, platform) => MaterialAppBarData(elevation: 0),
-        cupertino: (context, platform) => CupertinoNavigationBarData(
-          heroTag: 'PlatToSett',
-          transitionBetweenRoutes: false,
-        ),
+        elevation: 0,
       ),
       body: GridView.builder(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+
 import 'package:rawg_flutter/data/base.dart';
 import 'package:rawg_flutter/models/creator.dart';
 import 'package:rawg_flutter/screens/settings_screen.dart';
@@ -30,24 +30,19 @@ class _CreatorsScreenState extends State<CreatorsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return PlatformScaffold(
-      appBar: PlatformAppBar(
-        leading: PlatformIconButton(
-          icon: Icon(context.platformIcons.settings),
-          onPressed: () => Navigator.of(context).push(platformPageRoute(
-              context: context, builder: (context) => SettingsScreen())),
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.settings),
+          onPressed: () => Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => SettingsScreen())),
         ),
-        trailingActions: [
-          IconButton(
-              icon: Icon(context.platformIcons.search), onPressed: () {}),
+        actions: [
+          IconButton(icon: Icon(Icons.search), onPressed: () {}),
           IconButton(icon: Icon(Icons.filter_list), onPressed: () {})
         ],
         title: Text('Creators'),
-        material: (context, platform) => MaterialAppBarData(elevation: 0),
-        cupertino: (context, platform) => CupertinoNavigationBarData(
-          heroTag: 'CreatToSett',
-          transitionBetweenRoutes: false,
-        ),
+        elevation: 0,
       ),
       body: ListView.builder(
         itemCount: (creatorsList == null ||
