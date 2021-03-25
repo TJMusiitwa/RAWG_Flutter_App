@@ -49,5 +49,6 @@ jobs:
       with:
         name: profile-apk
         path: build/app/outputs/apk/profile/app-profile.apk
+        #path: Users/runner/work/RAWG_Flutter_App/RAWG_Flutter_App/build/ios/iphoneos/Runner.app
 
         

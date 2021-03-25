@@ -31,16 +31,12 @@ class _RAWGNavState extends State<RAWGNav> {
       bottomNavBar: PlatformNavBar(
         items: [
           BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.game_controller_solid),
-              title: Text('Games')),
+              icon: Icon(CupertinoIcons.game_controller_solid), label: 'Games'),
+          BottomNavigationBarItem(icon: Icon(Icons.store), label: 'Stores'),
+          BottomNavigationBarItem(icon: Icon(Icons.games), label: 'Platforms'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Creators'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.store), title: Text('Stores')),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.games), title: Text('Platforms')),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person), title: Text('Creators')),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.business), title: Text('Publishers')),
+              icon: Icon(Icons.business), label: 'Publishers'),
         ],
         currentIndex: _currentScreen,
         itemChanged: (index) => setState(() => _currentScreen = index),

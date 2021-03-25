@@ -1,0 +1,8 @@
+name: swagger
+version: 1.0.0
+description: Swagger API client
+publish_to: 'none'
+environment:
+  sdk: ">=2.6.0 <3.0.0"
+dependencies:
+  http: '>=0.11.1 <0.12.0'
