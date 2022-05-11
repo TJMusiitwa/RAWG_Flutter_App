@@ -51,13 +51,13 @@ class _GamesScreenState extends State<GamesScreen> {
       body: ListView.builder(
         itemCount: (gamesList == null ||
                 gamesList.results == null ||
-                gamesList.results.length == 0)
+                gamesList.results!.length == 0)
             ? 0
-            : gamesList.results.length,
+            : gamesList.results!.length,
         itemBuilder: (BuildContext context, int index) {
-          var gamesItem = gamesList.results[index];
+          var gamesItem = gamesList.results![index];
           return ListTile(
-            title: Text(gamesItem.name),
+            title: Text(gamesItem.name!),
             subtitle: Text(
                 "Release Date: ${gamesItem.released.toString().split(" ")[0]}"),
             onTap: () {},

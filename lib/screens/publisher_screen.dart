@@ -43,13 +43,13 @@ class _PublishersScreenState extends State<PublishersScreen> {
       body: ListView.builder(
         itemCount: (publishersList == null ||
                 publishersList.results == null ||
-                publishersList.results.length == 0)
+                publishersList.results!.length == 0)
             ? 0
-            : publishersList.results.length,
+            : publishersList.results!.length,
         itemBuilder: (BuildContext context, int index) {
-          var publisherItem = publishersList.results[index];
+          var publisherItem = publishersList.results![index];
           return ListTile(
-            title: Text(publisherItem.name),
+            title: Text(publisherItem.name!),
             subtitle: Text(
                 "Total Games Count: ${publisherItem.gamesCount.toString()}"),
             onTap: () {},

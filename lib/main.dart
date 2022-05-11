@@ -11,10 +11,8 @@ class MyApp extends StatelessWidget {
       home: RAWGNav(),
       theme: ThemeData(
         primaryColor: Colors.black,
-        primaryColorBrightness: Brightness.dark,
-        accentColor: Colors.grey,
-        accentColorBrightness: Brightness.dark,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.grey),
       ),
       debugShowCheckedModeBanner: false,
     );

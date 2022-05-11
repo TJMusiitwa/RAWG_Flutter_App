@@ -47,11 +47,11 @@ class _StoresScreenState extends State<StoresScreen> {
       body: ListView.builder(
         itemCount: (storeList == null ||
                 storeList.results == null ||
-                storeList.results.length == 0)
+                storeList.results!.length == 0)
             ? 0
-            : storeList.results.length,
+            : storeList.results!.length,
         itemBuilder: (BuildContext context, int index) {
-          var storeTileItem = storeList.results[index];
+          var storeTileItem = storeList.results![index];
           return ListTile(
             // leading: CachedNetworkImage(
             //     imageUrl: storeTileItem.imageBackground == null
@@ -59,7 +59,7 @@ class _StoresScreenState extends State<StoresScreen> {
             //         : storeTileItem.imageBackground,
             //     placeholder: (context, url) =>
             //         Image.asset("assets/app_alt.png")),
-            title: Text(storeTileItem.name),
+            title: Text(storeTileItem.name!),
             subtitle: Text(
                 "Total Games Count: ${storeTileItem.gamesCount.toString()}"),
             trailing:

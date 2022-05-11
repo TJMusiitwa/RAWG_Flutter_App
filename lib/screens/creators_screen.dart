@@ -47,21 +47,21 @@ class _CreatorsScreenState extends State<CreatorsScreen> {
       body: ListView.builder(
         itemCount: (creatorsList == null ||
                 creatorsList.results == null ||
-                creatorsList.results.length == 0)
+                creatorsList.results!.length == 0)
             ? 0
-            : creatorsList.results.length,
+            : creatorsList.results!.length,
         itemBuilder: (BuildContext context, int index) {
-          var creatorItem = creatorsList.results[index];
+          var creatorItem = creatorsList.results![index];
 
           return ListTile(
-            title: Text(creatorItem.name),
+            title: Text(creatorItem.name!),
             subtitle: Wrap(
               spacing: 10,
               children: List<Widget>.generate(
-                  creatorItem.positions.length,
+                  creatorItem.positions!.length,
                   (index) => Chip(
                       label: Text(toBeginningOfSentenceCase(
-                          creatorItem.positions[index].name)))),
+                          creatorItem.positions![index].name)!))),
             ),
             isThreeLine: true,
             onTap: () {},

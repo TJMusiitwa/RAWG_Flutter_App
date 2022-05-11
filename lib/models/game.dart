@@ -23,12 +23,12 @@ class Games {
     this.filters,
   });
 
-  int count;
-  String next;
+  int? count;
+  String? next;
   dynamic previous;
-  List<Result> results;
-  String description;
-  Filters filters;
+  List<Result>? results;
+  String? description;
+  Filters? filters;
 
   factory Games.fromJson(Map<String, dynamic> json) => _$GamesFromJson(json);
 
@@ -41,7 +41,7 @@ class Filters {
     this.years,
   });
 
-  List<FiltersYear> years;
+  List<FiltersYear>? years;
 
   factory Filters.fromJson(Map<String, dynamic> json) =>
       _$FiltersFromJson(json);
@@ -61,13 +61,13 @@ class FiltersYear {
     this.count,
   });
 
-  int from;
-  int to;
-  String filter;
-  int decade;
-  List<YearYear> years;
-  bool nofollow;
-  int count;
+  int? from;
+  int? to;
+  String? filter;
+  int? decade;
+  List<YearYear>? years;
+  bool? nofollow;
+  int? count;
 
   factory FiltersYear.fromJson(Map<String, dynamic> json) =>
       _$FiltersYearFromJson(json);
@@ -83,9 +83,9 @@ class YearYear {
     this.nofollow,
   });
 
-  int year;
-  int count;
-  bool nofollow;
+  int? year;
+  int? count;
+  bool? nofollow;
 
   factory YearYear.fromJson(Map<String, dynamic> json) =>
       _$YearYearFromJson(json);
@@ -125,33 +125,33 @@ class Result {
     this.shortScreenshots,
   });
 
-  int id;
-  String slug;
-  String name;
-  DateTime released;
-  bool tba;
-  String backgroundImage;
-  double rating;
-  int ratingTop;
-  List<Rating> ratings;
-  int ratingsCount;
-  int reviewsTextCount;
-  int added;
-  AddedByStatus addedByStatus;
-  int metacritic;
-  int playtime;
-  int suggestionsCount;
+  int? id;
+  String? slug;
+  String? name;
+  DateTime? released;
+  bool? tba;
+  String? backgroundImage;
+  double? rating;
+  int? ratingTop;
+  List<Rating>? ratings;
+  int? ratingsCount;
+  int? reviewsTextCount;
+  int? added;
+  AddedByStatus? addedByStatus;
+  int? metacritic;
+  int? playtime;
+  int? suggestionsCount;
   dynamic userGame;
-  int reviewsCount;
-  String saturatedColor;
-  String dominantColor;
-  List<PlatformElement> platforms;
-  List<ParentPlatform> parentPlatforms;
-  List<Genre> genres;
-  List<Store> stores;
-  Clip clip;
-  List<Genre> tags;
-  List<ShortScreenshot> shortScreenshots;
+  int? reviewsCount;
+  String? saturatedColor;
+  String? dominantColor;
+  List<PlatformElement>? platforms;
+  List<ParentPlatform>? parentPlatforms;
+  List<Genre>? genres;
+  List<Store>? stores;
+  Clip? clip;
+  List<Genre>? tags;
+  List<ShortScreenshot>? shortScreenshots;
 
   factory Result.fromJson(Map<String, dynamic> json) => _$ResultFromJson(json);
 
@@ -169,12 +169,12 @@ class AddedByStatus {
     this.playing,
   });
 
-  int yet;
-  int owned;
-  int beaten;
-  int toplay;
-  int dropped;
-  int playing;
+  int? yet;
+  int? owned;
+  int? beaten;
+  int? toplay;
+  int? dropped;
+  int? playing;
 
   factory AddedByStatus.fromJson(Map<String, dynamic> json) =>
       _$AddedByStatusFromJson(json);
@@ -191,10 +191,10 @@ class Clip {
     this.preview,
   });
 
-  String clip;
-  Clips clips;
-  String video;
-  String preview;
+  String? clip;
+  Clips? clips;
+  String? video;
+  String? preview;
 
   factory Clip.fromJson(Map<String, dynamic> json) => _$ClipFromJson(json);
 
@@ -209,9 +209,9 @@ class Clips {
     this.full,
   });
 
-  String the320;
-  String the640;
-  String full;
+  String? the320;
+  String? the640;
+  String? full;
 
   factory Clips.fromJson(Map<String, dynamic> json) => _$ClipsFromJson(json);
 
@@ -230,13 +230,13 @@ class Genre {
     this.language,
   });
 
-  int id;
-  String name;
-  String slug;
-  int gamesCount;
-  String imageBackground;
-  String domain;
-  String language;
+  int? id;
+  String? name;
+  String? slug;
+  int? gamesCount;
+  String? imageBackground;
+  String? domain;
+  String? language;
 
   factory Genre.fromJson(Map<String, dynamic> json) => _$GenreFromJson(json);
 
@@ -249,7 +249,7 @@ class ParentPlatform {
     this.platform,
   });
 
-  ParentPlatformPlatform platform;
+  ParentPlatformPlatform? platform;
 
   factory ParentPlatform.fromJson(Map<String, dynamic> json) =>
       _$ParentPlatformFromJson(json);
@@ -265,9 +265,9 @@ class ParentPlatformPlatform {
     this.slug,
   });
 
-  int id;
-  String name;
-  String slug;
+  int? id;
+  String? name;
+  String? slug;
 
   factory ParentPlatformPlatform.fromJson(Map<String, dynamic> json) =>
       _$ParentPlatformPlatformFromJson(json);
@@ -284,10 +284,10 @@ class PlatformElement {
     this.requirementsRu,
   });
 
-  PlatformPlatform platform;
-  DateTime releasedAt;
-  Requirements requirementsEn;
-  Requirements requirementsRu;
+  PlatformPlatform? platform;
+  DateTime? releasedAt;
+  Requirements? requirementsEn;
+  Requirements? requirementsRu;
 
   factory PlatformElement.fromJson(Map<String, dynamic> json) =>
       _$PlatformElementFromJson(json);
@@ -308,14 +308,14 @@ class PlatformPlatform {
     this.imageBackground,
   });
 
-  int id;
-  String name;
-  String slug;
+  int? id;
+  String? name;
+  String? slug;
   dynamic image;
   dynamic yearEnd;
-  int yearStart;
-  int gamesCount;
-  String imageBackground;
+  int? yearStart;
+  int? gamesCount;
+  String? imageBackground;
 
   factory PlatformPlatform.fromJson(Map<String, dynamic> json) =>
       _$PlatformPlatformFromJson(json);
@@ -330,8 +330,8 @@ class Requirements {
     this.recommended,
   });
 
-  String minimum;
-  String recommended;
+  String? minimum;
+  String? recommended;
 
   factory Requirements.fromJson(Map<String, dynamic> json) =>
       _$RequirementsFromJson(json);
@@ -348,10 +348,10 @@ class Rating {
     this.percent,
   });
 
-  int id;
-  String title;
-  int count;
-  double percent;
+  int? id;
+  String? title;
+  int? count;
+  double? percent;
 
   factory Rating.fromJson(Map<String, dynamic> json) => _$RatingFromJson(json);
 
@@ -365,8 +365,8 @@ class ShortScreenshot {
     this.image,
   });
 
-  int id;
-  String image;
+  int? id;
+  String? image;
 
   factory ShortScreenshot.fromJson(Map<String, dynamic> json) =>
       _$ShortScreenshotFromJson(json);
@@ -383,10 +383,10 @@ class Store {
     this.urlRu,
   });
 
-  int id;
-  Genre store;
-  String urlEn;
-  String urlRu;
+  int? id;
+  Genre? store;
+  String? urlEn;
+  String? urlRu;
 
   factory Store.fromJson(Map<String, dynamic> json) => _$StoreFromJson(json);
 

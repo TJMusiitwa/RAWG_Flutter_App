@@ -49,7 +49,7 @@ class SettingsScreen extends StatelessWidget {
                     'Built with ❤ in Flutter ',
                     style: Theme.of(context)
                         .textTheme
-                        .overline
+                        .overline!
                         .copyWith(fontSize: 20),
                   ),
                 ],

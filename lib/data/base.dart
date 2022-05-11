@@ -8,7 +8,8 @@ class HttpService {
   final String rawgAPIURL = "https://api.rawg.io/api";
 
   Future<dynamic> getCreators() async {
-    http.Response creatorResponse = await http.get("$rawgAPIURL/creators",
+    http.Response creatorResponse = await http.get(
+        Uri.parse("$rawgAPIURL/creators"),
         headers: {HttpHeaders.userAgentHeader: appUserAgent});
 
     if (creatorResponse.statusCode == 200) {
@@ -20,7 +21,7 @@ class HttpService {
   }
 
   Future<dynamic> getGames() async {
-    http.Response gameResponse = await http.get("$rawgAPIURL/games",
+    http.Response gameResponse = await http.get(Uri.parse("$rawgAPIURL/games"),
         headers: {HttpHeaders.userAgentHeader: appUserAgent});
 
     if (gameResponse.statusCode == 200) {
@@ -32,7 +33,8 @@ class HttpService {
   }
 
   Future<dynamic> getPlatforms() async {
-    http.Response platformResponse = await http.get("$rawgAPIURL/platforms",
+    http.Response platformResponse = await http.get(
+        Uri.parse("$rawgAPIURL/platforms"),
         headers: {HttpHeaders.userAgentHeader: appUserAgent});
 
     if (platformResponse.statusCode == 200) {
@@ -44,7 +46,8 @@ class HttpService {
   }
 
   Future<dynamic> getPublishers() async {
-    http.Response publisherResponse = await http.get("$rawgAPIURL/publishers",
+    http.Response publisherResponse = await http.get(
+        Uri.parse("$rawgAPIURL/publishers"),
         headers: {HttpHeaders.userAgentHeader: appUserAgent});
 
     if (publisherResponse.statusCode == 200) {
@@ -56,7 +59,8 @@ class HttpService {
   }
 
   Future<dynamic> getStores() async {
-    http.Response storeResponse = await http.get("$rawgAPIURL/stores",
+    http.Response storeResponse = await http.get(
+        Uri.parse("$rawgAPIURL/stores"),
         headers: {HttpHeaders.userAgentHeader: appUserAgent});
 
     if (storeResponse.statusCode == 200) {

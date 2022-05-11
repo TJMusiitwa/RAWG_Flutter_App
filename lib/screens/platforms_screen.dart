@@ -32,24 +32,24 @@ class _PlatformsScreenState extends State<PlatformsScreen> {
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         itemCount: (platformsList == null ||
                 platformsList.results == null ||
-                platformsList.results.length == 0)
+                platformsList.results!.length == 0)
             ? 0
-            : platformsList.results.length,
+            : platformsList.results!.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3, crossAxisSpacing: 5, mainAxisSpacing: 2.5),
         itemBuilder: (BuildContext context, int index) {
-          var platformItem = platformsList.results[index];
+          var platformItem = platformsList.results![index];
           return Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             child: GridTile(
               child: Hero(
-                  tag: platformItem.id,
+                  tag: platformItem.id!,
                   child: Image.asset("assets/app_alt.png")),
               footer: GridTileBar(
                 backgroundColor: CupertinoColors.systemGreen,
                 title: Text(
-                  platformItem.name,
+                  platformItem.name!,
                 ),
                 // subtitle: Text(platformItem.yearStart.toString() == null
                 //     ? ""

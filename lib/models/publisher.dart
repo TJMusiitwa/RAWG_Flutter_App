@@ -22,10 +22,10 @@ class Publishers {
     this.results,
   });
 
-  int count;
-  String next;
+  int? count;
+  String? next;
   dynamic previous;
-  List<Result> results;
+  List<Result>? results;
 
   factory Publishers.fromJson(Map<String, dynamic> json) =>
       _$PublishersFromJson(json);
@@ -44,12 +44,12 @@ class Result {
     this.games,
   });
 
-  int id;
-  String name;
-  String slug;
-  int gamesCount;
-  String imageBackground;
-  List<Game> games;
+  int? id;
+  String? name;
+  String? slug;
+  int? gamesCount;
+  String? imageBackground;
+  List<Game>? games;
 
   factory Result.fromJson(Map<String, dynamic> json) => _$ResultFromJson(json);
 
@@ -65,10 +65,10 @@ class Game {
     this.added,
   });
 
-  int id;
-  String slug;
-  String name;
-  int added;
+  int? id;
+  String? slug;
+  String? name;
+  int? added;
 
   factory Game.fromJson(Map<String, dynamic> json) => _$GameFromJson(json);
 
