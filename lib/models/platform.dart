@@ -8,13 +8,13 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'platform.g.dart';
 
-Platforms platformsFromJson(String str) => Platforms.fromJson(json.decode(str));
+Platform platformsFromJson(String str) => Platform.fromJson(json.decode(str));
 
-String platformsToJson(Platforms data) => json.encode(data.toJson());
+String platformsToJson(Platform data) => json.encode(data.toJson());
 
 @JsonSerializable(explicitToJson: true)
-class Platforms {
-  Platforms({
+class Platform {
+  Platform({
     this.count,
     this.next,
     this.previous,
@@ -24,17 +24,17 @@ class Platforms {
   int? count;
   String? next;
   dynamic previous;
-  List<Result>? results;
+  List<PlatformResult>? results;
 
-  factory Platforms.fromJson(Map<String, dynamic> json) =>
-      _$PlatformsFromJson(json);
+  factory Platform.fromJson(Map<String, dynamic> json) =>
+      _$PlatformFromJson(json);
 
-  Map<String, dynamic> toJson() => _$PlatformsToJson(this);
+  Map<String, dynamic> toJson() => _$PlatformToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class Result {
-  Result({
+class PlatformResult {
+  PlatformResult({
     this.id,
     this.name,
     this.slug,
@@ -56,9 +56,10 @@ class Result {
   dynamic yearEnd;
   List<Game>? games;
 
-  factory Result.fromJson(Map<String, dynamic> json) => _$ResultFromJson(json);
+  factory PlatformResult.fromJson(Map<String, dynamic> json) =>
+      _$PlatformResultFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ResultToJson(this);
+  Map<String, dynamic> toJson() => _$PlatformResultToJson(this);
 }
 
 @JsonSerializable()

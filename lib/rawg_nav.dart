@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:rawg_flutter/screens/creators_screen.dart';
 import 'package:rawg_flutter/screens/games_screen.dart';
 import 'package:rawg_flutter/screens/platforms_screen.dart';
@@ -14,12 +13,12 @@ class RAWGNav extends StatefulWidget {
 class _RAWGNavState extends State<RAWGNav> {
   int _currentScreen = 0;
 
-  var _screens = [
-    GamesScreen(),
-    StoresScreen(),
-    PlatformsScreen(),
-    CreatorsScreen(),
-    PublishersScreen()
+  final _screens = [
+    const GamesScreen(),
+    const StoresScreen(),
+    const PlatformsScreen(),
+    const CreatorsScreen(),
+    const PublishersScreen()
   ];
 
   @override
@@ -27,9 +26,9 @@ class _RAWGNavState extends State<RAWGNav> {
     return Scaffold(
       body: Container(child: _screens.elementAt(_currentScreen)),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.game_controller_solid), label: 'Games'),
+              icon: Icon(Icons.sports_esports), label: 'Games'),
           BottomNavigationBarItem(icon: Icon(Icons.store), label: 'Stores'),
           BottomNavigationBarItem(icon: Icon(Icons.games), label: 'Platforms'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Creators'),
@@ -40,7 +39,7 @@ class _RAWGNavState extends State<RAWGNav> {
         onTap: (index) => setState(() => _currentScreen = index),
         backgroundColor: Theme.of(context).primaryColor,
         selectedItemColor: Colors.black,
-        unselectedItemColor: Theme.of(context).accentColor,
+        unselectedItemColor: Theme.of(context).colorScheme.secondary,
       ),
     );
   }

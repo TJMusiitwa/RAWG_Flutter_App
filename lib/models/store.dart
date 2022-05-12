@@ -8,13 +8,13 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'store.g.dart';
 
-Stores storesFromJson(String str) => Stores.fromJson(json.decode(str));
+Store storesFromJson(String str) => Store.fromJson(json.decode(str));
 
-String storesToJson(Stores data) => json.encode(data.toJson());
+String storesToJson(Store data) => json.encode(data.toJson());
 
 @JsonSerializable(explicitToJson: true)
-class Stores {
-  Stores({
+class Store {
+  Store({
     this.count,
     this.next,
     this.previous,
@@ -24,16 +24,16 @@ class Stores {
   int? count;
   dynamic next;
   dynamic previous;
-  List<Result>? results;
+  List<StoreResult>? results;
 
-  factory Stores.fromJson(Map<String, dynamic> json) => _$StoresFromJson(json);
+  factory Store.fromJson(Map<String, dynamic> json) => _$StoreFromJson(json);
 
-  Map<String, dynamic> toJson() => _$StoresToJson(this);
+  Map<String, dynamic> toJson() => _$StoreToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class Result {
-  Result({
+class StoreResult {
+  StoreResult({
     this.id,
     this.name,
     this.domain,
@@ -51,9 +51,10 @@ class Result {
   String? imageBackground;
   List<Game>? games;
 
-  factory Result.fromJson(Map<String, dynamic> json) => _$ResultFromJson(json);
+  factory StoreResult.fromJson(Map<String, dynamic> json) =>
+      _$StoreResultFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ResultToJson(this);
+  Map<String, dynamic> toJson() => _$StoreResultToJson(this);
 }
 
 @JsonSerializable()

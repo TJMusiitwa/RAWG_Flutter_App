@@ -8,13 +8,13 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'creator.g.dart';
 
-Creators creatorsFromJson(String str) => Creators.fromJson(json.decode(str));
+Creator creatorsFromJson(String str) => Creator.fromJson(json.decode(str));
 
-String creatorsToJson(Creators data) => json.encode(data.toJson());
+String creatorsToJson(Creator data) => json.encode(data.toJson());
 
 @JsonSerializable(explicitToJson: true)
-class Creators {
-  Creators({
+class Creator {
+  Creator({
     this.count,
     this.next,
     this.previous,
@@ -24,17 +24,17 @@ class Creators {
   int? count;
   String? next;
   dynamic previous;
-  List<Result>? results;
+  List<CreatorResult>? results;
 
-  factory Creators.fromJson(Map<String, dynamic> json) =>
-      _$CreatorsFromJson(json);
+  factory Creator.fromJson(Map<String, dynamic> json) =>
+      _$CreatorFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CreatorsToJson(this);
+  Map<String, dynamic> toJson() => _$CreatorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class Result {
-  Result({
+class CreatorResult {
+  CreatorResult({
     this.id,
     this.name,
     this.slug,
@@ -54,9 +54,10 @@ class Result {
   List<Game>? positions;
   List<Game>? games;
 
-  factory Result.fromJson(Map<String, dynamic> json) => _$ResultFromJson(json);
+  factory CreatorResult.fromJson(Map<String, dynamic> json) =>
+      _$CreatorResultFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ResultToJson(this);
+  Map<String, dynamic> toJson() => _$CreatorResultToJson(this);
 }
 
 @JsonSerializable()

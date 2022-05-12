@@ -8,14 +8,14 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'publisher.g.dart';
 
-Publishers publishersFromJson(String str) =>
-    Publishers.fromJson(json.decode(str));
+Publisher publishersFromJson(String str) =>
+    Publisher.fromJson(json.decode(str));
 
-String publishersToJson(Publishers data) => json.encode(data.toJson());
+String publishersToJson(Publisher data) => json.encode(data.toJson());
 
 @JsonSerializable(explicitToJson: true)
-class Publishers {
-  Publishers({
+class Publisher {
+  Publisher({
     this.count,
     this.next,
     this.previous,
@@ -25,17 +25,17 @@ class Publishers {
   int? count;
   String? next;
   dynamic previous;
-  List<Result>? results;
+  List<PublisherResult>? results;
 
-  factory Publishers.fromJson(Map<String, dynamic> json) =>
-      _$PublishersFromJson(json);
+  factory Publisher.fromJson(Map<String, dynamic> json) =>
+      _$PublisherFromJson(json);
 
-  Map<String, dynamic> toJson() => _$PublishersToJson(this);
+  Map<String, dynamic> toJson() => _$PublisherToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class Result {
-  Result({
+class PublisherResult {
+  PublisherResult({
     this.id,
     this.name,
     this.slug,
@@ -51,9 +51,10 @@ class Result {
   String? imageBackground;
   List<Game>? games;
 
-  factory Result.fromJson(Map<String, dynamic> json) => _$ResultFromJson(json);
+  factory PublisherResult.fromJson(Map<String, dynamic> json) =>
+      _$PublisherResultFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ResultToJson(this);
+  Map<String, dynamic> toJson() => _$PublisherResultToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)

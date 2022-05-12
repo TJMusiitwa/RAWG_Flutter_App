@@ -6,23 +6,24 @@ part of 'creator.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Creators _$CreatorsFromJson(Map<String, dynamic> json) => Creators(
+Creator _$CreatorFromJson(Map<String, dynamic> json) => Creator(
       count: json['count'] as int?,
       next: json['next'] as String?,
       previous: json['previous'],
       results: (json['results'] as List<dynamic>?)
-          ?.map((e) => Result.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => CreatorResult.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$CreatorsToJson(Creators instance) => <String, dynamic>{
+Map<String, dynamic> _$CreatorToJson(Creator instance) => <String, dynamic>{
       'count': instance.count,
       'next': instance.next,
       'previous': instance.previous,
       'results': instance.results?.map((e) => e.toJson()).toList(),
     };
 
-Result _$ResultFromJson(Map<String, dynamic> json) => Result(
+CreatorResult _$CreatorResultFromJson(Map<String, dynamic> json) =>
+    CreatorResult(
       id: json['id'] as int?,
       name: json['name'] as String?,
       slug: json['slug'] as String?,
@@ -37,7 +38,8 @@ Result _$ResultFromJson(Map<String, dynamic> json) => Result(
           .toList(),
     );
 
-Map<String, dynamic> _$ResultToJson(Result instance) => <String, dynamic>{
+Map<String, dynamic> _$CreatorResultToJson(CreatorResult instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'slug': instance.slug,

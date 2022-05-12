@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: const Text('Settings'),
         elevation: 0,
       ),
       body: Padding(
@@ -15,25 +14,25 @@ class SettingsScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
-              title: Text('Rate RAWG Flutter'),
-              onTap: () => null,
+              title: const Text('Rate RAWG Flutter'),
+              onTap: () {},
             ),
             ListTile(
-              title: Text('Share RAWG Flutter'),
-              onTap: () => null,
+              title: const Text('Share RAWG Flutter'),
+              onTap: () {},
             ),
             ListTile(
-              title: Text('Send Feedback'),
-              onTap: () => null,
+              title: const Text('Send Feedback'),
+              onTap: () {},
             ),
             ListTile(
-              title: Text('Open Source Licenses'),
+              title: const Text('Open Source Licenses'),
               onTap: () => showLicensePage(
                   context: context, applicationVersion: "0.0.1"),
             ),
             ListTile(
-              title: Text('Data provided by RAWG'),
-              subtitle: Text('https://rawg.io/'),
+              title: const Text('Data provided by RAWG'),
+              subtitle: const Text('https://rawg.io/'),
               onTap: () {},
             ),
             Expanded(

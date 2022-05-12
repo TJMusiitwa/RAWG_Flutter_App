@@ -8,13 +8,13 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'game.g.dart';
 
-Games gamesFromJson(String str) => Games.fromJson(json.decode(str));
+Game gamesFromJson(String str) => Game.fromJson(json.decode(str));
 
-String gamesToJson(Games data) => json.encode(data.toJson());
+String gamesToJson(Game data) => json.encode(data.toJson());
 
 @JsonSerializable(explicitToJson: true)
-class Games {
-  Games({
+class Game {
+  Game({
     this.count,
     this.next,
     this.previous,
@@ -26,13 +26,13 @@ class Games {
   int? count;
   String? next;
   dynamic previous;
-  List<Result>? results;
+  List<GameResult>? results;
   String? description;
   Filters? filters;
 
-  factory Games.fromJson(Map<String, dynamic> json) => _$GamesFromJson(json);
+  factory Game.fromJson(Map<String, dynamic> json) => _$GameFromJson(json);
 
-  Map<String, dynamic> toJson() => _$GamesToJson(this);
+  Map<String, dynamic> toJson() => _$GameToJson(this);
 }
 
 @JsonSerializable()
@@ -94,8 +94,8 @@ class YearYear {
 }
 
 @JsonSerializable(explicitToJson: true)
-class Result {
-  Result({
+class GameResult {
+  GameResult({
     this.id,
     this.slug,
     this.name,
@@ -153,9 +153,10 @@ class Result {
   List<Genre>? tags;
   List<ShortScreenshot>? shortScreenshots;
 
-  factory Result.fromJson(Map<String, dynamic> json) => _$ResultFromJson(json);
+  factory GameResult.fromJson(Map<String, dynamic> json) =>
+      _$GameResultFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ResultToJson(this);
+  Map<String, dynamic> toJson() => _$GameResultToJson(this);
 }
 
 @JsonSerializable()

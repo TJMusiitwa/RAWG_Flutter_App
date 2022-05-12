@@ -6,23 +6,23 @@ part of 'store.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Stores _$StoresFromJson(Map<String, dynamic> json) => Stores(
+Store _$StoreFromJson(Map<String, dynamic> json) => Store(
       count: json['count'] as int?,
       next: json['next'],
       previous: json['previous'],
       results: (json['results'] as List<dynamic>?)
-          ?.map((e) => Result.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => StoreResult.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$StoresToJson(Stores instance) => <String, dynamic>{
+Map<String, dynamic> _$StoreToJson(Store instance) => <String, dynamic>{
       'count': instance.count,
       'next': instance.next,
       'previous': instance.previous,
       'results': instance.results?.map((e) => e.toJson()).toList(),
     };
 
-Result _$ResultFromJson(Map<String, dynamic> json) => Result(
+StoreResult _$StoreResultFromJson(Map<String, dynamic> json) => StoreResult(
       id: json['id'] as int?,
       name: json['name'] as String?,
       domain: json['domain'] as String?,
@@ -34,7 +34,8 @@ Result _$ResultFromJson(Map<String, dynamic> json) => Result(
           .toList(),
     );
 
-Map<String, dynamic> _$ResultToJson(Result instance) => <String, dynamic>{
+Map<String, dynamic> _$StoreResultToJson(StoreResult instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'domain': instance.domain,

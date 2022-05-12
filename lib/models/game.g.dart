@@ -6,12 +6,12 @@ part of 'game.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Games _$GamesFromJson(Map<String, dynamic> json) => Games(
+Game _$GameFromJson(Map<String, dynamic> json) => Game(
       count: json['count'] as int?,
       next: json['next'] as String?,
       previous: json['previous'],
       results: (json['results'] as List<dynamic>?)
-          ?.map((e) => Result.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => GameResult.fromJson(e as Map<String, dynamic>))
           .toList(),
       description: json['description'] as String?,
       filters: json['filters'] == null
@@ -19,7 +19,7 @@ Games _$GamesFromJson(Map<String, dynamic> json) => Games(
           : Filters.fromJson(json['filters'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$GamesToJson(Games instance) => <String, dynamic>{
+Map<String, dynamic> _$GameToJson(Game instance) => <String, dynamic>{
       'count': instance.count,
       'next': instance.next,
       'previous': instance.previous,
@@ -73,7 +73,7 @@ Map<String, dynamic> _$YearYearToJson(YearYear instance) => <String, dynamic>{
       'nofollow': instance.nofollow,
     };
 
-Result _$ResultFromJson(Map<String, dynamic> json) => Result(
+GameResult _$GameResultFromJson(Map<String, dynamic> json) => GameResult(
       id: json['id'] as int?,
       slug: json['slug'] as String?,
       name: json['name'] as String?,
@@ -124,7 +124,8 @@ Result _$ResultFromJson(Map<String, dynamic> json) => Result(
           .toList(),
     );
 
-Map<String, dynamic> _$ResultToJson(Result instance) => <String, dynamic>{
+Map<String, dynamic> _$GameResultToJson(GameResult instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'slug': instance.slug,
       'name': instance.name,

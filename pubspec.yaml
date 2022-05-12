@@ -10,29 +10,40 @@ environment:
 
 dependencies:
   cached_network_image: ^3.2.0
+  chopper: ^4.0.5
   cupertino_icons: ^1.0.4
   flutter:
     sdk: flutter
+  flutter_riverpod: ^1.0.3
   freezed: ^2.0.3
   http: ^0.13.4
   json_annotation: ^4.5.0
-  openapi_base: ^1.0.2+2
-  openapi_generator_annotations: ^3.3.0
+  logging: ^1.0.2
   progressive_image: ^2.0.0
 
 dev_dependencies:
   build_runner: ^2.1.10
+  chopper_generator: ^4.0.5
   flutter_launcher_icons: ^0.9.2
+  flutter_lints: ^1.0.4
+  flutter_native_splash: ^2.1.6
   flutter_test:
     sdk: flutter
   json_serializable: ^6.2.0
-  #openapi_freezed_dio_builder: any
-  openapi_generator: ^3.3.0+1
 
 flutter_icons:
   android: true
   ios: true
   image_path: "assets/app_alt.png"
+
+flutter_native_splash:
+  android: true
+  ios: true
+  color: "#000000"
+  image: "assets/app_alt.png"
+  android_12:
+    icon_background_color: "#000000"
+    image: "assets/app_alt.png"
 
 flutter:
   uses-material-design: true

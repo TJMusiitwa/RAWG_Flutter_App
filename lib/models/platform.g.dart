@@ -6,23 +6,24 @@ part of 'platform.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Platforms _$PlatformsFromJson(Map<String, dynamic> json) => Platforms(
+Platform _$PlatformFromJson(Map<String, dynamic> json) => Platform(
       count: json['count'] as int?,
       next: json['next'] as String?,
       previous: json['previous'],
       results: (json['results'] as List<dynamic>?)
-          ?.map((e) => Result.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => PlatformResult.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$PlatformsToJson(Platforms instance) => <String, dynamic>{
+Map<String, dynamic> _$PlatformToJson(Platform instance) => <String, dynamic>{
       'count': instance.count,
       'next': instance.next,
       'previous': instance.previous,
       'results': instance.results?.map((e) => e.toJson()).toList(),
     };
 
-Result _$ResultFromJson(Map<String, dynamic> json) => Result(
+PlatformResult _$PlatformResultFromJson(Map<String, dynamic> json) =>
+    PlatformResult(
       id: json['id'] as int?,
       name: json['name'] as String?,
       slug: json['slug'] as String?,
@@ -36,7 +37,8 @@ Result _$ResultFromJson(Map<String, dynamic> json) => Result(
           .toList(),
     );
 
-Map<String, dynamic> _$ResultToJson(Result instance) => <String, dynamic>{
+Map<String, dynamic> _$PlatformResultToJson(PlatformResult instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'slug': instance.slug,
