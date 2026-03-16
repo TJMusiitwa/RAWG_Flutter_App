@@ -1,9 +1,9 @@
 import 'package:dart_mappable/dart_mappable.dart';
 
-part 'publisher.mapper.dart';
+part 'genre.mapper.dart';
 
 @MappableClass(caseStyle: CaseStyle.snakeCase)
-class Publisher with PublisherMappable {
+class Genre with GenreMappable {
   final int id;
   final String name;
   final String slug;
@@ -11,7 +11,7 @@ class Publisher with PublisherMappable {
   final String? imageBackground;
   final String? description;
 
-  const Publisher({
+  const Genre({
     required this.id,
     required this.name,
     required this.slug,
