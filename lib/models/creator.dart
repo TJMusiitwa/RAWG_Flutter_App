@@ -15,14 +15,14 @@ String creatorsToJson(Creators data) => json.encode(data.toJson());
 @JsonSerializable(explicitToJson: true)
 class Creators {
   Creators({
-    this.count,
-    this.next,
-    this.previous,
-    this.results,
+    required this.count,
+    required this.next,
+    required this.previous,
+    required this.results,
   });
 
-  int count;
-  String next;
+  int? count;
+  String? next;
   dynamic previous;
   List<Result> results;
 
@@ -35,22 +35,22 @@ class Creators {
 @JsonSerializable(explicitToJson: true)
 class Result {
   Result({
-    this.id,
-    this.name,
-    this.slug,
-    this.image,
-    this.imageBackground,
-    this.gamesCount,
-    this.positions,
-    this.games,
+    required this.id,
+    required this.name,
+    required this.slug,
+    required this.image,
+    required this.imageBackground,
+    required this.gamesCount,
+    required this.positions,
+    required this.games,
   });
 
-  int id;
-  String name;
-  String slug;
-  String image;
-  String imageBackground;
-  int gamesCount;
+  int? id;
+  String? name;
+  String? slug;
+  String? image;
+  String? imageBackground;
+  int? gamesCount;
   List<Game> positions;
   List<Game> games;
 
@@ -62,16 +62,16 @@ class Result {
 @JsonSerializable()
 class Game {
   Game({
-    this.id,
-    this.slug,
-    this.name,
-    this.added,
+    required this.id,
+    required this.slug,
+    required this.name,
+    required this.added,
   });
 
-  int id;
-  String slug;
-  String name;
-  int added;
+  int? id;
+  String? slug;
+  String? name;
+  int? added;
 
   factory Game.fromJson(Map<String, dynamic> json) => _$GameFromJson(json);
 

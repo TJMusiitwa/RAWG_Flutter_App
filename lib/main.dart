@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
   );
   final materialTheme = ThemeData(
     primaryColor: Colors.black,
-    accentColor: Colors.green,
     chipTheme: ChipThemeData(
       backgroundColor: Color(0x1f000000),
       brightness: Brightness.light,
@@ -41,7 +40,7 @@ class MyApp extends StatelessWidget {
         width: 0.0,
         style: BorderStyle.none,
       )),
-    ),
+    ), colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.green),
   );
   @override
   Widget build(BuildContext context) {

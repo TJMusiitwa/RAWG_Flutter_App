@@ -32,20 +32,20 @@ class _RAWGNavState extends State<RAWGNav> {
         items: [
           BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.game_controller_solid),
-              title: Text('Games')),
+              label: 'Games'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.store), title: Text('Stores')),
+              icon: Icon(Icons.store), label: 'Stores'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.games), title: Text('Platforms')),
+              icon: Icon(Icons.games), label: 'Platforms'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person), title: Text('Creators')),
+              icon: Icon(Icons.person), label: 'Creators'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.business), title: Text('Publishers')),
+              icon: Icon(Icons.business), label: 'Publishers'),
         ],
         currentIndex: _currentScreen,
         itemChanged: (index) => setState(() => _currentScreen = index),
         material: (context, platform) => MaterialNavBarData(
-          selectedItemColor: Theme.of(context).accentColor,
+          selectedItemColor: Theme.of(context).colorScheme.secondary,
           unselectedItemColor: Theme.of(context).disabledColor,
         ),
         cupertino: (context, platform) => CupertinoTabBarData(

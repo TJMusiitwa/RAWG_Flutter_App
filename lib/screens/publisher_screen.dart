@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:rawg_flutter/data/base.dart';
 import 'package:rawg_flutter/models/publisher.dart';
@@ -14,7 +13,7 @@ class PublishersScreen extends StatefulWidget {
 }
 
 class _PublishersScreenState extends State<PublishersScreen> {
-  Publishers publishersList = Publishers();
+  Publishers? publishersList;
 
   void getPublishersData() async {
     var publishersResult = await HttpService().getPublishers();
@@ -45,17 +44,15 @@ class _PublishersScreenState extends State<PublishersScreen> {
         ),
       ),
       body: ListView.builder(
-        itemCount: (publishersList == null ||
-                publishersList.results == null ||
-                publishersList.results.length == 0)
+        itemCount: (publishersList?.results.length == 0)
             ? 0
-            : publishersList.results.length,
+            : publishersList?.results.length,
         itemBuilder: (BuildContext context, int index) {
-          var publisherItem = publishersList.results[index];
+          var publisherItem = publishersList?.results[index];
           return ListTile(
-            title: Text(publisherItem.name),
+            title: Text(publisherItem?.name ?? ("" as dynamic)),
             subtitle: Text(
-                "Total Games Count: ${publisherItem.gamesCount.toString()}"),
+                "Total Games Count: ${publisherItem?.gamesCount?.toString() ?? ""}"),
             onTap: () {},
           );
         },
