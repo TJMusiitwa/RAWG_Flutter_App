@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -41,13 +40,13 @@ class SettingsScreen extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Text('Created by Jonathan Thomas Musiitwa',
-                      style: Theme.of(context).textTheme.overline),
+                      style: Theme.of(context).textTheme.labelSmall),
                   Text(
                     'Built with ❤ in Flutter ',
                     style: Theme.of(context)
                         .textTheme
-                        .overline
-                        .copyWith(fontSize: 20),
+                        .labelSmall
+                        ?.copyWith(fontSize: 20),
                   ),
                 ],
               ),

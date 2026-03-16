@@ -15,20 +15,20 @@ String gamesToJson(Games data) => json.encode(data.toJson());
 @JsonSerializable(explicitToJson: true)
 class Games {
   Games({
-    this.count,
-    this.next,
-    this.previous,
-    this.results,
-    this.description,
-    this.filters,
+    required this.count,
+    required this.next,
+    required this.previous,
+    required this.results,
+    required this.description,
+    required this.filters,
   });
 
-  int count;
-  String next;
+  int? count;
+  String? next;
   dynamic previous;
   List<Result> results;
-  String description;
-  Filters filters;
+  String? description;
+  Filters? filters;
 
   factory Games.fromJson(Map<String, dynamic> json) => _$GamesFromJson(json);
 
@@ -38,7 +38,7 @@ class Games {
 @JsonSerializable()
 class Filters {
   Filters({
-    this.years,
+    required this.years,
   });
 
   List<FiltersYear> years;
@@ -52,22 +52,22 @@ class Filters {
 @JsonSerializable(explicitToJson: true)
 class FiltersYear {
   FiltersYear({
-    this.from,
-    this.to,
-    this.filter,
-    this.decade,
-    this.years,
-    this.nofollow,
-    this.count,
+    required this.from,
+    required this.to,
+    required this.filter,
+    required this.decade,
+    required this.years,
+    required this.nofollow,
+    required this.count,
   });
 
-  int from;
-  int to;
-  String filter;
-  int decade;
+  int? from;
+  int? to;
+  String? filter;
+  int? decade;
   List<YearYear> years;
-  bool nofollow;
-  int count;
+  bool? nofollow;
+  int? count;
 
   factory FiltersYear.fromJson(Map<String, dynamic> json) =>
       _$FiltersYearFromJson(json);
@@ -78,14 +78,14 @@ class FiltersYear {
 @JsonSerializable()
 class YearYear {
   YearYear({
-    this.year,
-    this.count,
-    this.nofollow,
+    required this.year,
+    required this.count,
+    required this.nofollow,
   });
 
-  int year;
-  int count;
-  bool nofollow;
+  int? year;
+  int? count;
+  bool? nofollow;
 
   factory YearYear.fromJson(Map<String, dynamic> json) =>
       _$YearYearFromJson(json);
@@ -96,60 +96,60 @@ class YearYear {
 @JsonSerializable(explicitToJson: true)
 class Result {
   Result({
-    this.id,
-    this.slug,
-    this.name,
-    this.released,
-    this.tba,
-    this.backgroundImage,
-    this.rating,
-    this.ratingTop,
-    this.ratings,
-    this.ratingsCount,
-    this.reviewsTextCount,
-    this.added,
-    this.addedByStatus,
-    this.metacritic,
-    this.playtime,
-    this.suggestionsCount,
-    this.userGame,
-    this.reviewsCount,
-    this.saturatedColor,
-    this.dominantColor,
-    this.platforms,
-    this.parentPlatforms,
-    this.genres,
-    this.stores,
-    this.clip,
-    this.tags,
-    this.shortScreenshots,
+    required this.id,
+    required this.slug,
+    required this.name,
+    required this.released,
+    required this.tba,
+    required this.backgroundImage,
+    required this.rating,
+    required this.ratingTop,
+    required this.ratings,
+    required this.ratingsCount,
+    required this.reviewsTextCount,
+    required this.added,
+    required this.addedByStatus,
+    required this.metacritic,
+    required this.playtime,
+    required this.suggestionsCount,
+    required this.userGame,
+    required this.reviewsCount,
+    required this.saturatedColor,
+    required this.dominantColor,
+    required this.platforms,
+    required this.parentPlatforms,
+    required this.genres,
+    required this.stores,
+    required this.clip,
+    required this.tags,
+    required this.shortScreenshots,
   });
 
-  int id;
-  String slug;
-  String name;
-  DateTime released;
-  bool tba;
-  String backgroundImage;
-  double rating;
-  int ratingTop;
+  int? id;
+  String? slug;
+  String? name;
+  DateTime? released;
+  bool? tba;
+  String? backgroundImage;
+  double? rating;
+  int? ratingTop;
   List<Rating> ratings;
-  int ratingsCount;
-  int reviewsTextCount;
-  int added;
-  AddedByStatus addedByStatus;
-  int metacritic;
-  int playtime;
-  int suggestionsCount;
+  int? ratingsCount;
+  int? reviewsTextCount;
+  int? added;
+  AddedByStatus? addedByStatus;
+  int? metacritic;
+  int? playtime;
+  int? suggestionsCount;
   dynamic userGame;
-  int reviewsCount;
-  String saturatedColor;
-  String dominantColor;
+  int? reviewsCount;
+  String? saturatedColor;
+  String? dominantColor;
   List<PlatformElement> platforms;
   List<ParentPlatform> parentPlatforms;
   List<Genre> genres;
   List<Store> stores;
-  Clip clip;
+  Clip? clip;
   List<Genre> tags;
   List<ShortScreenshot> shortScreenshots;
 
@@ -161,20 +161,20 @@ class Result {
 @JsonSerializable()
 class AddedByStatus {
   AddedByStatus({
-    this.yet,
-    this.owned,
-    this.beaten,
-    this.toplay,
-    this.dropped,
-    this.playing,
+    required this.yet,
+    required this.owned,
+    required this.beaten,
+    required this.toplay,
+    required this.dropped,
+    required this.playing,
   });
 
-  int yet;
-  int owned;
-  int beaten;
-  int toplay;
-  int dropped;
-  int playing;
+  int? yet;
+  int? owned;
+  int? beaten;
+  int? toplay;
+  int? dropped;
+  int? playing;
 
   factory AddedByStatus.fromJson(Map<String, dynamic> json) =>
       _$AddedByStatusFromJson(json);
@@ -185,16 +185,16 @@ class AddedByStatus {
 @JsonSerializable()
 class Clip {
   Clip({
-    this.clip,
-    this.clips,
-    this.video,
-    this.preview,
+    required this.clip,
+    required this.clips,
+    required this.video,
+    required this.preview,
   });
 
-  String clip;
-  Clips clips;
-  String video;
-  String preview;
+  String? clip;
+  Clips? clips;
+  String? video;
+  String? preview;
 
   factory Clip.fromJson(Map<String, dynamic> json) => _$ClipFromJson(json);
 
@@ -204,14 +204,14 @@ class Clip {
 @JsonSerializable()
 class Clips {
   Clips({
-    this.the320,
-    this.the640,
-    this.full,
+    required this.the320,
+    required this.the640,
+    required this.full,
   });
 
-  String the320;
-  String the640;
-  String full;
+  String? the320;
+  String? the640;
+  String? full;
 
   factory Clips.fromJson(Map<String, dynamic> json) => _$ClipsFromJson(json);
 
@@ -221,22 +221,22 @@ class Clips {
 @JsonSerializable()
 class Genre {
   Genre({
-    this.id,
-    this.name,
-    this.slug,
-    this.gamesCount,
-    this.imageBackground,
-    this.domain,
-    this.language,
+    required this.id,
+    required this.name,
+    required this.slug,
+    required this.gamesCount,
+    required this.imageBackground,
+    required this.domain,
+    required this.language,
   });
 
-  int id;
-  String name;
-  String slug;
-  int gamesCount;
-  String imageBackground;
-  String domain;
-  String language;
+  int? id;
+  String? name;
+  String? slug;
+  int? gamesCount;
+  String? imageBackground;
+  String? domain;
+  String? language;
 
   factory Genre.fromJson(Map<String, dynamic> json) => _$GenreFromJson(json);
 
@@ -246,10 +246,10 @@ class Genre {
 @JsonSerializable()
 class ParentPlatform {
   ParentPlatform({
-    this.platform,
+    required this.platform,
   });
 
-  ParentPlatformPlatform platform;
+  ParentPlatformPlatform? platform;
 
   factory ParentPlatform.fromJson(Map<String, dynamic> json) =>
       _$ParentPlatformFromJson(json);
@@ -260,14 +260,14 @@ class ParentPlatform {
 @JsonSerializable()
 class ParentPlatformPlatform {
   ParentPlatformPlatform({
-    this.id,
-    this.name,
-    this.slug,
+    required this.id,
+    required this.name,
+    required this.slug,
   });
 
-  int id;
-  String name;
-  String slug;
+  int? id;
+  String? name;
+  String? slug;
 
   factory ParentPlatformPlatform.fromJson(Map<String, dynamic> json) =>
       _$ParentPlatformPlatformFromJson(json);
@@ -278,16 +278,16 @@ class ParentPlatformPlatform {
 @JsonSerializable()
 class PlatformElement {
   PlatformElement({
-    this.platform,
-    this.releasedAt,
-    this.requirementsEn,
-    this.requirementsRu,
+    required this.platform,
+    required this.releasedAt,
+    required this.requirementsEn,
+    required this.requirementsRu,
   });
 
-  PlatformPlatform platform;
-  DateTime releasedAt;
-  Requirements requirementsEn;
-  Requirements requirementsRu;
+  PlatformPlatform? platform;
+  DateTime? releasedAt;
+  Requirements? requirementsEn;
+  Requirements? requirementsRu;
 
   factory PlatformElement.fromJson(Map<String, dynamic> json) =>
       _$PlatformElementFromJson(json);
@@ -298,24 +298,24 @@ class PlatformElement {
 @JsonSerializable()
 class PlatformPlatform {
   PlatformPlatform({
-    this.id,
-    this.name,
-    this.slug,
-    this.image,
-    this.yearEnd,
-    this.yearStart,
-    this.gamesCount,
-    this.imageBackground,
+    required this.id,
+    required this.name,
+    required this.slug,
+    required this.image,
+    required this.yearEnd,
+    required this.yearStart,
+    required this.gamesCount,
+    required this.imageBackground,
   });
 
-  int id;
-  String name;
-  String slug;
+  int? id;
+  String? name;
+  String? slug;
   dynamic image;
   dynamic yearEnd;
-  int yearStart;
-  int gamesCount;
-  String imageBackground;
+  int? yearStart;
+  int? gamesCount;
+  String? imageBackground;
 
   factory PlatformPlatform.fromJson(Map<String, dynamic> json) =>
       _$PlatformPlatformFromJson(json);
@@ -326,12 +326,12 @@ class PlatformPlatform {
 @JsonSerializable()
 class Requirements {
   Requirements({
-    this.minimum,
-    this.recommended,
+    required this.minimum,
+    required this.recommended,
   });
 
-  String minimum;
-  String recommended;
+  String? minimum;
+  String? recommended;
 
   factory Requirements.fromJson(Map<String, dynamic> json) =>
       _$RequirementsFromJson(json);
@@ -342,16 +342,16 @@ class Requirements {
 @JsonSerializable()
 class Rating {
   Rating({
-    this.id,
-    this.title,
-    this.count,
-    this.percent,
+    required this.id,
+    required this.title,
+    required this.count,
+    required this.percent,
   });
 
-  int id;
-  String title;
-  int count;
-  double percent;
+  int? id;
+  String? title;
+  int? count;
+  double? percent;
 
   factory Rating.fromJson(Map<String, dynamic> json) => _$RatingFromJson(json);
 
@@ -361,12 +361,12 @@ class Rating {
 @JsonSerializable()
 class ShortScreenshot {
   ShortScreenshot({
-    this.id,
-    this.image,
+    required this.id,
+    required this.image,
   });
 
-  int id;
-  String image;
+  int? id;
+  String? image;
 
   factory ShortScreenshot.fromJson(Map<String, dynamic> json) =>
       _$ShortScreenshotFromJson(json);
@@ -377,16 +377,16 @@ class ShortScreenshot {
 @JsonSerializable()
 class Store {
   Store({
-    this.id,
-    this.store,
-    this.urlEn,
-    this.urlRu,
+    required this.id,
+    required this.store,
+    required this.urlEn,
+    required this.urlRu,
   });
 
-  int id;
-  Genre store;
-  String urlEn;
-  String urlRu;
+  int? id;
+  Genre? store;
+  String? urlEn;
+  String? urlRu;
 
   factory Store.fromJson(Map<String, dynamic> json) => _$StoreFromJson(json);
 

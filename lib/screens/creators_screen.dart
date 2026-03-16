@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:rawg_flutter/data/base.dart';
 import 'package:rawg_flutter/models/creator.dart';
@@ -14,7 +13,7 @@ class CreatorsScreen extends StatefulWidget {
 }
 
 class _CreatorsScreenState extends State<CreatorsScreen> {
-  Creators creatorsList = Creators();
+  Creators? creatorsList;
 
   void getCreatorsData() async {
     var creatorsResult = await HttpService().getCreators();
@@ -50,23 +49,21 @@ class _CreatorsScreenState extends State<CreatorsScreen> {
         ),
       ),
       body: ListView.builder(
-        itemCount: (creatorsList == null ||
-                creatorsList.results == null ||
-                creatorsList.results.length == 0)
+        itemCount: (creatorsList?.results.length == 0)
             ? 0
-            : creatorsList.results.length,
+            : creatorsList?.results.length,
         itemBuilder: (BuildContext context, int index) {
-          var creatorItem = creatorsList.results[index];
+          var creatorItem = creatorsList?.results[index];
 
           return ListTile(
-            title: Text(creatorItem.name),
+            title: Text(creatorItem?.name ?? ("" as dynamic)),
             subtitle: Wrap(
               spacing: 10,
               children: List<Widget>.generate(
-                  creatorItem.positions.length,
+                  creatorItem?.positions?.length ?? 0,
                   (index) => Chip(
                       label: Text(toBeginningOfSentenceCase(
-                          creatorItem.positions[index].name)))),
+                          creatorItem?.positions[index]?.name ?? ("" as dynamic))))),
             ),
             isThreeLine: true,
             onTap: () {},
